@@ -1,5 +1,8 @@
 import { ChangeEvent, CSSProperties, useMemo, useState } from "react";
 
+const API_BASE_URL =
+  import.meta.env.VITE_API_BASE_URL || "http://127.0.0.1:8000";
+
 type ManualResult = {
   input_name?: string;
   first_name?: string;
@@ -105,7 +108,7 @@ export default function App() {
       formData.append("file", file);
       formData.append("university", university);
 
-      const response = await fetch("http://127.0.0.1:8000/api/enrich-xlsx", {
+      const response = await fetch(`${API_BASE_URL}/api/enrich-xlsx`, {
         method: "POST",
         body: formData,
       });
@@ -133,7 +136,7 @@ export default function App() {
     setResult(null);
 
     try {
-      const response = await fetch("http://127.0.0.1:8000/api/enrich-person", {
+      const response = await fetch(`${API_BASE_URL}/api/enrich-person`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

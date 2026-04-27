@@ -11,3 +11,4 @@ outputs/
 page_text/
 uploads/
 *.xlsx
+.vscode/
