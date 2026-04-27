@@ -1,3 +1,5 @@
+fastapi
+uvicorn
 pandas
 openpyxl
 requests
@@ -5,3 +7,4 @@ beautifulsoup4
 lxml
 rapidfuzz
 googlesearch-python
+python-multipart
